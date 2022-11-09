@@ -1,5 +1,5 @@
 import './App.css';
-
+//import { fetchProducts} from './api/api.js';
 import TopNav from './components/TopNav/TopNav';
 import Main from './components/Main/Main';
 //import ContainerProduct from './components/ContainerProduct/ContainerProduct';
@@ -7,17 +7,13 @@ import Main from './components/Main/Main';
 import React, { useEffect, useState } from "react";
 import Footer from './components/Footer/Footer';
 import { Basket } from './components/Aside/Basket';
-import data from "./assets/db/db";
+import { getData} from './api/api.js'
+
 
 
 function loadItems() {
 
-
-
-
-
   const items = localStorage.getItem("products");
-
   if (items) {
     try {
       return JSON.parse(items);
@@ -29,33 +25,31 @@ function loadItems() {
   }
 }
 
+
+  
+
+  //console.log(data);
+
 function App() {
 
+  const [data, setdata] = useState([]);
 
 
-  const url = "http://localhost:3000/products";
- 
-  const getData = async () => {
-    const response = await fetch(url);
-    const products = await response.json();
-    const data = products.map(data => ({
-      id: data.id,
-      title: data.title,
-      price: data.price,
-      img: data.img,
-      qty:data.qty
-    }))
-    return data;
+  const url = "http://localhost:3001/products";
+
+
+  useEffect(() => {
+    const prueba = async () => {
+      const datajson = await getData(url);
+      setdata(datajson);
     }
-    
-  
-  
-  
+    prueba();
 
-  console.log(getData());
+ }, [url])
 
 
-  const [cartItems, setCartItems] = useState(() => loadItems());
+
+ const [cartItems, setCartItems] = useState(() => loadItems());
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(cartItems));
@@ -75,18 +69,39 @@ function App() {
     }
 
   };
-  
+  const deleteFromCart = (product) => {
 
+    const items = cartItems.filter((item) => item.id !== product.id);
+
+    setCartItems(items);
+    
+  }
+  /*
+  const checkout = (cartItems) => {
+    let totalPrice = 0;
+    const total = cartItems.map(x =>
+      totalPrice += x.price);
+    return totalPrice; 
+
+
+  }
+*/
+    
+
+  
+  
+ 
   return (
     <>
       <TopNav />
       <div className='container-xl'>
         <div className='row'>
             <div className='col-sm-8'>
-                <Main addToCart={addToCart} products={data} />
+            <Main addToCart={addToCart} products={data} />
             </div>
             <div className='col-sm-4'>
-               <Basket addToCart={addToCart} loadItems={loadItems} cartItems= {cartItems} />
+            <Basket addToCart={addToCart} deleteFromCart={deleteFromCart} loadItems={loadItems} cartItems={cartItems} />
+           
             </div>
 
         </div>

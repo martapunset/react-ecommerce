@@ -5,7 +5,7 @@
     {
     "id": 101,
     "title": "Board 1",
-    "price": 88,
+    "price": 68,
     "img":"../img/e1.jpg",
     "qty": 0
     
@@ -13,31 +13,29 @@
   {
     "id": 102,
     "title": "Board 2",
-    "price": 88,
+    "price": 78,
     "img":"../img/e2.jpg",
     "qty": 0
     
-
- 
   },
   {
     "id": 103,
     "title": "Board 3",
-    "price": 88,
+    "price": 108,
     "img":"../img/e3.jpg",
     "qty": 0
   },
   {
     "id": 104,
     "title": "Board 4",
-    "price": 88,
+    "price": 98,
     "img":"../img/e4.jpg",
     "qty": 0
   },
   {
     "id": 105,
     "title": "Board 5",
-    "price": 88,
+    "price": 96,
     "img":"../img/e5.jpg",
     "qty": 0
   },

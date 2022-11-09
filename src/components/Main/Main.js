@@ -2,11 +2,17 @@ import React from 'react'
 
 const Main =(props)=>{
 
-    const { products, addToCart } = props;
+  const { products, addToCart} = props;
+  console.log("products :" + products);
+  
+
   return (
       <main className="wrapper text-center">
-        { products.map((product) => (
-          <div className="m-2 p-2" key={product.id}>
+      {products.map((product) => (
+        
+        
+        <div className="m-2 p-2" key={product.id}>
+         
               <div className="contr">
                   <div className="card" >
                             <a href="single.html" />
@@ -16,10 +22,11 @@ const Main =(props)=>{
                             </span>
                                            
                             <div className="shop_desc"><a href="single.html">
-                            </a><h3><a href="single.html"></a><a href="#">aliquam volutp</a></h3>
+                </a><h3><a href="single.html"></a><a href="#">{product.title}</a></h3>
+                  <h5>REF: {product.id}</h5>
                                 <p>Lorem ipsum consectetuer adipiscing </p>
                                 <span className="reducedfrom">{product.price}</span>
-                                <span className="actual">$12.00</span><br />
+                                <span className="actual">{product.price}</span><br />
                                 <ul className="buttons">
               
                                       <button className="" > - </button><span>0</span>
