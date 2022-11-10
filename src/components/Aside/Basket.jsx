@@ -1,10 +1,21 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Checkout } from './Checkout';
-export const Basket=(props)=> {
-    const { cartItems, addToCart, loadItems,deleteFromCart, checkout } = props;
-  
+import { useEffect } from 'react';
+import { useContext } from 'react';
+import { CartContext } from '../../CartContext/CartContext';
 
+
+
+export const Basket = (props) => {
+  const { cartItems, deleteFromCart } = useContext(CartContext);
+        
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(cartItems));
+  }, [cartItems]);
+  
+ 
     
 console.log(cartItems.length)
   return (
@@ -24,8 +35,8 @@ console.log(cartItems.length)
 
       <div className='container'>
 
-        <Checkout cartItems={cartItems} checkout={checkout} />
-        <button onClick={() => checkout(cartItems)}> Checkout</button>
+        <Checkout cartItems={cartItems} />
+        <Link className="btn btn-primary" to="/checkout">Checkout</Link>
       </div>
 
       

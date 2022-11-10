@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
-
+import { useContext } from 'react';
+import { CartContext } from '../../CartContext/CartContext';
 export const Checkout=(props)=> {
-    const { cartItems } = props;
+    const { cartItems } = useContext(CartContext);
 
    
         let totalPrice = 0;

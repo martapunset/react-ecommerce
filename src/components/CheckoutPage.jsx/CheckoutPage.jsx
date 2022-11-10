@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const CheckoutPage = () => {
+export const CheckoutPage = (props) => {
 
-
+const { cartItems } = props;
 
 
 
