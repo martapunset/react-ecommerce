@@ -1,6 +1,6 @@
 
-    export const getData =async (url) => {
-       
+    export const getData =async () => {
+      const url = "http://localhost:3001/products";
       try {
         const response = await fetch(url);
         const product = await response.json();
@@ -11,5 +11,6 @@
         <h1>Api response error</h1>
       }  
      
-    }
-  
+} 
+
+//TODO ddd

@@ -62,12 +62,12 @@ import React from 'react'
                     <dt><a href="#"><span>Change Region</span></a></dt>
                     <dd>
                         <ul >
-                            <li><a href="#">Australia<img class="flag flagvisibility" src="images/as.png" alt=""/><span class="value">AS</span></a></li>
-                            <li><a href="#">Sri Lanka<img class="flag flagvisibility" src="images/srl.png" alt=""/><span class="value">SL</span></a></li>
-                            <li><a href="#">Newziland<img class="flag flagvisibility" src="images/nz.png" alt=""/><span class="value">NZ</span></a></li>
-                            <li><a href="#">Pakistan<img class="flag flagvisibility" src="images/pk.png" alt=""/><span class="value">Pk</span></a></li>
-                            <li><a href="#">United Kingdom<img class="flag flagvisibility" src="images/uk.png" alt=""/><span class="value">UK</span></a></li>
-                            <li><a href="#">United States<img class="flag flagvisibility" src="images/us.png" alt=""/><span class="value">US</span></a></li>
+                            <li><a href="#">Australia<img className="flag flagvisibility" src="images/as.png" alt=""/><span className="value">AS</span></a></li>
+                            <li><a href="#">Sri Lanka<img className="flag flagvisibility" src="images/srl.png" alt=""/><span className="value">SL</span></a></li>
+                            <li><a href="#">Newziland<img className="flag flagvisibility" src="images/nz.png" alt=""/><span className="value">NZ</span></a></li>
+                            <li><a href="#">Pakistan<img className="flag flagvisibility" src="images/pk.png" alt=""/><span className="value">Pk</span></a></li>
+                            <li><a href="#">United Kingdom<img className="flag flagvisibility" src="images/uk.png" alt=""/><span className="value">UK</span></a></li>
+                            <li><a href="#">United States<img className="flag flagvisibility" src="images/us.png" alt=""/><span className="value">US</span></a></li>
                         </ul>
                      </dd>
                      </dl>

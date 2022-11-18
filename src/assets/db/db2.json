@@ -1,52 +1,57 @@
 
-  {
+{
     "products":
-    [
-    {
+  [{
     "id": 101,
     "title": "Board 1",
     "price": 68,
-    "img":"../img/e1.jpg",
-    "qty": 0
+    "img":"../img/e1.jpg"
+ 
     
   },
   {
     "id": 102,
     "title": "Board 2",
     "price": 78,
-    "img":"../img/e2.jpg",
-    "qty": 0
+    "img":"../img/e2.jpg"
+    
     
   },
   {
     "id": 103,
     "title": "Board 3",
     "price": 108,
-    "img":"../img/e3.jpg",
-    "qty": 0
+    "img":"../img/e3.jpg"
+
   },
   {
     "id": 104,
     "title": "Board 4",
     "price": 98,
-    "img":"../img/e4.jpg",
-    "qty": 0
+    "img":"../img/e4.jpg"
+    
   },
   {
     "id": 105,
     "title": "Board 5",
     "price": 96,
-    "img":"../img/e5.jpg",
-    "qty": 0
+    "img":"../img/e5.jpg"
+    
   },
   {
     "id": 106,
     "title": "Board 1",
     "price": 88,
-    "img":"../img/e1.jpg",
-    "qty": 0
+    "img":"../img/e1.jpg"
+   
     
-  }
+  }],
+  "users":
+  [
+    
 
-    ]
+
+
+  ]
+
   }

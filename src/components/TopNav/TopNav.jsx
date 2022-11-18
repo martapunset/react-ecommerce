@@ -1,37 +1,59 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import Dropdownlist from "../Dropdown/Dropdown";
+import { Basket } from "../Aside/Basket";
+import logo from "./logo.png";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export const TopNav = () => {
-    return (
-       <>
-        <header>
-        <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="header-left">
-                                <div className="logo">
-                                  
-                                </div>
-                                <div className="menu">
-                                   
-                                    <ul className="nav" id="nav" >
-                                         <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="team.html">Team</a></li>
-                                        <li><a href="experiance.html">Events</a></li>
-                                        <li><a href="experiance.html">Experiance</a></li>
-                                        <li className=""><a href="shop.html">Company</a></li>
-                                        <li className=""><a href="contact.html">Contact</a></li> 
-                                        <div className="clear"></div>
-                                    </ul> 
-                                </div>
-                                <div className="clear"></div>
-                        </div>
-                            
-                        
-                    </div>
-                </div>
+  return (
+    <>
+      <header className="container-fluid d-flex">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="header">
+              <div className="logo"></div>
+
+              <div className="menu">
+                <ul className="nav" id="nav">
+                  <li>
+                    <img src={logo} />
+                  </li>
+                  <li>
+                    {" "}
+                    <Link className="btn" to="/">
+                      Shop
+                    </Link>
+                  </li>
+
+                  <li className="">
+                    <a href="shop.html">Company</a>
+                  </li>
+                  <li className="">
+                    <a href="contact.html">Contact</a>
+                  </li>
+                  <li>
+                    <Link className="btn " to="/login">
+                      Sign In
+                    </Link>
+                  </li>
+                  
+                  <div className="clear"></div>
+                </ul>
+              </div>
             </div>
-        </header>
-        </>
-    );
+            
+          </div>
+          
+        </div>
+        <div className="dropdown-button">
+              <Dropdownlist>
+                <Basket />
+              </Dropdownlist>
+            </div>
+      </header>
+    </>
+  );
 };
 export default TopNav;

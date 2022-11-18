@@ -15,12 +15,6 @@ import { CartContext } from './CartContext/CartContext';
 
 
 
-
-
-  
-
-  //console.log(data);
-
 function App() {
 
   const { setdata } = useContext(CartContext);
@@ -29,16 +23,6 @@ function App() {
   const { products } = useContext(CartContext);
 
   
-  /*
-  const checkout = (cartItems) => {
-    let totalPrice = 0;
-    const total = cartItems.map(x =>
-      totalPrice += x.price);
-    return totalPrice; 
-
-
-  }
-*/
 
   
   
@@ -48,10 +32,8 @@ function App() {
       <BrowserRouter>
         <TopNav />
         <Router  />
-        
-
         <Footer />
-        </BrowserRouter>
+     </BrowserRouter>
    
     </>
   );
