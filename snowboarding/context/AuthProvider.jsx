@@ -2,6 +2,8 @@ import { AuthContext } from "./AuthContext";
 import { useReducer } from "react";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "../types/types";
+
+
 export const AuthProvider = (children) => {
   const initArgs = {
     isLogged: false,
@@ -20,17 +22,16 @@ export const AuthProvider = (children) => {
             payload:user
         })
     }
+    /*
+          
+            <AuthContext.Provider value={login
+               }>
+              {children}
+          </AuthContext.Provider>  */
     return (
       
-      <>
-          
-            <AuthContext.Provider value={
-                {
-                    ...authState,
-                    login: login
-                }}>
-              {children}
-          </AuthContext.Provider>
+        <>
+            
     </>
   );
 };

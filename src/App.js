@@ -12,30 +12,22 @@ import { Router } from './Router/Router';
 import { useContext } from 'react';
 import { CartContext } from './CartContext/CartProvider';
 
-
+ 
 
 
 function App() {
 
-  const { setdata } = useContext(CartContext);
-  const { data } = useContext(CartContext);
-  const {cartItems}= useContext(CartContext);
-  const { products } = useContext(CartContext);
-
-  
-
-  
-  
+  console.log("app")
  
   return (
-    <>
+   
       <BrowserRouter>
         <TopNav />
         <Router  />
         <Footer />
      </BrowserRouter>
    
-    </>
+  
   );
 }
 

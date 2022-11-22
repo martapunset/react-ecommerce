@@ -6,7 +6,7 @@ import { CheckoutPage } from '../Pages/CheckoutPage'
 import { HomePage } from '../Pages/HomePage'
 import { ProductPage } from '../Pages/ProductPage'
 import { RegisterPage } from '../Pages/RegisterPage'
-import { SignInPage } from '../auth/pages/SignInPage'
+import { SignInPage } from '../Pages/SignInPage'
 
 
 

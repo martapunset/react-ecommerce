@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CartContext } from "../../CartContext/CartProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../auth/context";
+
 import { useNavigate } from "react-router-dom";
 /*
 const useField = ({ type }) => {
@@ -32,7 +32,7 @@ export const SignIn = () => {
     event.preventDefault();
     console.log("this is submiiiiit");
   };
-  console.log(AuthContext);
+ 
 
   return (
     <>
