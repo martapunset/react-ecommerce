@@ -5,53 +5,51 @@ import { Basket } from "../Aside/Basket";
 import logo from "./logo.png";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Login from "../SignIn/Login";
 
 export const TopNav = () => {
   return (
     <>
       <header className="container-fluid d-flex">
         <div className="row">
-          <div className="col-md-12">
-            <div className="header">
-              <div className="logo"></div>
+          <div className="header">
+            <div className="logo"></div>
 
-              <div className="menu">
-                <ul className="nav" id="nav">
-                  <li>
-                    <img src={logo} />
-                  </li>
-                  <li>
-                    {" "}
-                    <Link className="btn" to="/">
-                      Shop
-                    </Link>
-                  </li>
+            <ul className="nav menu" id="nav">
+              <li>
+                <img src={logo} />
+              </li>
+              <li>
+                {" "}
+                <Link className="btn" to="/">
+                  Shop
+                </Link>
+              </li>
 
-                  <li className="">
-                    <a href="shop.html">Company</a>
-                  </li>
-                  <li className="">
-                    <a href="contact.html">Contact</a>
-                  </li>
-                  <li>
-                    <Link className="btn " to="/login">
-                      Sign In
-                    </Link>
-                  </li>
-                  
-                  <div className="clear"></div>
-                </ul>
-              </div>
-            </div>
-            
+              <li className="">
+                <a href="shop.html">Company</a>
+              </li>
+              <li className="">
+                <a href="contact.html">Contact</a>
+              </li>
+              <li>
+                <Link className="btn" to="/login">
+                  Login
+                </Link>
+              </li>
+
+              <div className="clear"></div>
+            </ul>
           </div>
-          
         </div>
+    
         <div className="dropdown-button">
-              <Dropdownlist>
-                <Basket />
-              </Dropdownlist>
-            </div>
+          <span className="username-span">Logged as: </span>
+        
+          <Dropdownlist>
+            <Basket />
+          </Dropdownlist>
+        </div>
       </header>
     </>
   );

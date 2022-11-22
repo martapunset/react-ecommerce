@@ -23,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 100px;
 }
 
 .App-link {
@@ -54,10 +55,14 @@ body {
 }
 
 .dropdown-button{
-  justify-content: flex-end;   
+  width: 68%;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
   }
   .dropdown-menu{
     width: 400px;
+    height: 700px;
   }
 .productcard {
   margin: 20px;
@@ -65,7 +70,7 @@ body {
   height: 380px;
   border-radius: 10px;
   box-shadow: 0 5px 8px 0 rgba(43, 41, 41, 0.2);
-  background-color: rgb(182, 189, 176);
+  background-color: rgb(255, 255, 255);
 }
 .productcard > *:not(img) {
   padding: -1px 10px 1px 10px;
@@ -137,7 +142,7 @@ max-width: 80%;
 
 /*--footer--*/
 .footer{
-	background-color: #28a745;
+	background-color: #252725;
 	padding:5% 0;
   margin-top: 10%;
 }		
@@ -211,6 +216,7 @@ ul.footer_box li a:hover{
 .carousel-container{
   width: 800px;
   height: 800px;
+
 }
 
 a{
@@ -262,4 +268,27 @@ a{
 
  padding: 100px;;
   margin: 0 auto;
+}
+.checkout-container{
+  position: absolute;
+  
+left:30px; /*A la izquierda deje un espacio de 0px*/
+bottom:0px; /*Abajo deje un espacio de 0px*/
+height:100px; /*alto del div*/
+
+}
+.basketImg{
+  width: 100px;
+}
+.login-form-container{
+  max-width: 50%;
+  margin: 0 auto;
+  height: 800px;
+  padding-top: 100px;
+}
+header >*{
+  color: white;
+}
+.username-span{
+  padding: 20px 20px;
 }

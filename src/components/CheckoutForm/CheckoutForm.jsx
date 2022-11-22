@@ -1,59 +1,67 @@
 import React from 'react'
-
+import { useContext } from 'react';
+import { CartContext } from '../../CartContext/CartProvider';
+import { Checkout } from '../Aside/Checkout';
 export const CheckoutForm = () => {
 
-  
+  const { cartItems} = useContext(CartContext);
 
-
+  console.log(cartItems);
 
     return (
       <>  
 
        
-          
-        <div className="checkout-container" >
-          <div className="py-5 text-center">
-            <img className="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
-            <h2>Checkout form</h2>
+<div className="form-column col-md-12 order-md-2 mb-4">
+      <h4 className="d-flex justify-content-between align-items-center mb-5">
+        <span className="text-muted">Your cart</span>
+            <span className="badge badge-secondary badge-pill">{cartItems.length}</span>
+      </h4>
+          <ul className="list-group mb-3">
+          {cartItems.map((item) =>(
+     <div key={item.id}>
+            <li className="list-group-item d-flex justify-content-between lh-condensed"  >
            
-          </div>
-      
-     
-            <div className=" col-lg-14 order-md-last">
-              <h4 className="d-flex justify-content-between align-items-center mb-3">
-                <span className="text-primary">Your cart</span>
-                <span className="badge bg-primary rounded-pill">3</span>
-              </h4>
-              <ul className="list-group mb-3">
-                <li className="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 className="my-0">Product name</h6>
-                    <small className="text-muted">Brief description</small>
-                  </div>
-                  <span className="text-muted">$12</span>
-                </li>
-                
-                <li className="list-group-item d-flex justify-content-between bg-light">
-                  <div className="text-success">
-                    <h6 className="my-0">Promo code</h6>
-                    <small>EXAMPLECODE</small>
-                  </div>
-                  <span className="text-success">−$5</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between">
-                  <span>Total (USD)</span>
-                  <strong>$20</strong>
-                </li>
-              </ul>
-      
+            <img className="basketImg" src={item.img} ></img>
               
+                <div >
+                  
+                <h6 className="my-0">{item.title}</h6>
+                <small className="text-muted">Brief description</small>
+                </div>
+                
+                <span class="text-muted">{item.price}</span>
+           
+            </li>
+            
+            
+             
             </div>
-      
-        
-         
+              
+              ))}
+            
+        <li className="list-group-item d-flex justify-content-between bg-light">
+          <div className="text-success">
+            <h6 className="my-0">Promo code</h6>
+            <small>EXAMPLECODE</small>
           </div>
-        
-      
+          <span className="text-success">-$5</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Total (USD)</span>
+          <strong><Checkout></Checkout></strong>
+        </li>
+      </ul>
+
+      <form className="card p-2">
+        <div className="input-group">
+          <input type="text" className="form-control" placeholder="Promo code"/>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary">Redeem</button>
+          </div>
+        </div>
+      </form>
+    </div>
       
       
 

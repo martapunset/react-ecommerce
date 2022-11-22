@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 import { useContext } from 'react';
-import { CartContext } from '../../CartContext/CartContext';
-import { CartProvider } from '../../CartContext/CartContext';
+import { CartContext } from '../../CartContext/CartProvider';
+import { CartProvider } from '../../CartContext/CartProvider';
 import { getData } from '../../api/api';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';

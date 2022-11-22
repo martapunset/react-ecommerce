@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Checkout } from "./Checkout";
 import { useEffect } from "react";
 import { useContext } from "react";
-import { CartContext } from "../../CartContext/CartContext";
+import { CartContext } from "../../CartContext/CartProvider";
 import AlertSuccess from "../Alerts/Alert";
 
 export const Basket = (props) => {
@@ -31,17 +31,23 @@ export const Basket = (props) => {
                 <span>{item.qty}</span>
                 <button onClick={() => addToCart(item)}> + </button>{" "}
               </span>
-              <button className="btn btn btn-secondary" onClick={() => deleteFromCart(item)}>Delete</button>
+              <button
+                className="btn btn btn-secondary"
+                onClick={() => deleteFromCart(item)}
+              >
+                Delete
+              </button>
             </div>
           ))
         ) : (
           <h1>cart is empty</h1>
         )}
-
-        <Checkout cartItems={cartItems} />
-        <Link className="btn btn-primary" to="/checkout">
-          Checkout
-        </Link>
+        <div className="checkout-container">
+          <Checkout cartItems={cartItems} />
+          <Link className="btn btn-primary" to="/checkout">
+            Checkout
+          </Link>
+        </div>
       </div>
     </>
   );

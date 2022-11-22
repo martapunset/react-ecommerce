@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useContext } from 'react';
-import { CartContext } from '../../CartContext/CartContext';
+import { CartContext } from '../../CartContext/CartProvider';
 export const Checkout=(props)=> {
     const { cartItems } = useContext(CartContext);
 

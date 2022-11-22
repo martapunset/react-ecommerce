@@ -11,7 +11,7 @@ export const CheckoutPage = () => {
           <div className="col-lg-5">
             <CheckoutForm />
           </div>
-          <div className="col-lg-5">
+          <div className="col-lg-7">
             <ShippingForm />
           </div>
         </div>

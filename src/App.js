@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Router } from './Router/Router';
 
 import { useContext } from 'react';
-import { CartContext } from './CartContext/CartContext';
+import { CartContext } from './CartContext/CartProvider';
 
 
 

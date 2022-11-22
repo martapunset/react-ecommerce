@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
-export const CartProvider = (props) => {
+export const CartProvider = (children) => {
   const [data, setdata] = useState([]);
   const [cartItems, setCartItems] = useState(() => loadItems());
 
@@ -79,7 +79,7 @@ export const CartProvider = (props) => {
           substract,
         }}
       >
-        {props.children}
+        {children}
       </CartContext.Provider>
 
       <div>CartContext</div>
