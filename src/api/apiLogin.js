@@ -1,14 +1,18 @@
     
 
-export const getUser =async () => {
+export const getUser =async (email) => {
     const url = "http://localhost:3001/users";
-    try {
-      const response = await fetch();
-      const product = await response.json();
-      return product;
+  try {
+    const response = await fetch(url);
+    const users = await response.json();
+   const user = users.find(user => user.email === email)
+        
+   
+      console.log(user, "userfind")
+      return user;
 
-    }
-    catch (error) {
+    
+  } catch (error) {
       <h1>Api response error</h1>
     }  
    
@@ -16,7 +20,7 @@ export const getUser =async () => {
 
 
 
-export const login = async (user) => {
+export const postUser = async (user) => {
     const url = "http://localhost:3001/users";
        
     try {

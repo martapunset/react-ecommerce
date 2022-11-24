@@ -1,22 +1,65 @@
 import React from "react";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../auth/context";
+
+
+
+
+
+
 export const RegisterForm = () => {
-  const initialState = {
-    username: "marta@gmail.xom",
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  const { login } = useContext(AuthContext)
+  const {register}=useContext(AuthContext)
+  //const authState=useContext(AuthContext)
+  //const { username, password, isLoading, error, isLoggedIn } = authState;
+  const [registerData, setregisterData ] = useState({ 
+    email: "",
     password: "",
+    password2:"",
     firstname: "",
     lastname: "",
     phone: "",
     address: "",
-    postalCode: "",
+    postalCode: ""
+  })
+
+  const { email, password, password2, firstname, lastname, phone, } = registerData;
+
+
+
+ //const { setUsername } = useContext(CartContext);
+  const onInputChange = ({ target }) => {
+    const { name, value } = target;
+    
+    setregisterData({
+      ...registerData,
+      [name]: value
+    })
+    console.log(value)
+  
+ }
+
+  
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("this is submiiiiit");
+   register(registerData);   //function to receive and validate the resgister data
+    console.log(registerData, "loginData handle submit")
+
   };
-  const [user, setUser] = useState([initialState]);
-  console.log("user", user);
+  //const { id, user } = login;
+
 
   return (
     <>
       <div className="form-column col-lg-12">
-        <form className="p-5 needs-validation ">
+        <form className="p-5 needs-validation " onSubmit={handleSubmit}>
           <div className="row g-3">
             <div className="col-12">
               <label className="form-label">Email</label>
@@ -24,10 +67,10 @@ export const RegisterForm = () => {
                 className="form-control"
                 id="firstName"
                 type="email"
-                value={user.username}
-                name="username"
+                value={email}
+                name="email"
                 placeholder="name@example.com"
-                onChange={(event) => setUser(event.target.value)}
+                onChange={onInputChange}
               />
 
               <label className="form-label">Password</label>
@@ -36,8 +79,10 @@ export const RegisterForm = () => {
                 className="form-control"
                 id="password"
                 placeholder=""
-                value=""
+                value={password}
+                name="password"
                 required=""
+                onChange={onInputChange}
               />
 
               <label className="form-label">Confirm Password</label>
@@ -46,8 +91,10 @@ export const RegisterForm = () => {
                 className="form-control"
                 id="password"
                 placeholder=""
-                value=""
+                value={password2}
                 required=""
+                name="password2"
+                onChange={onInputChange}
               />
 
               <hr />
@@ -59,8 +106,10 @@ export const RegisterForm = () => {
                 className="form-control"
                 id="firstName"
                 placeholder=""
-                value=""
+                value={firstname}
                 required=""
+                name="firstname"
+                onChange={onInputChange}
               />
 
               <label for="lastName" className="form-label">
@@ -71,25 +120,29 @@ export const RegisterForm = () => {
                 className="form-control"
                 id="lastName"
                 placeholder=""
-                value=""
+                value={lastname}
                 required=""
+                name="lastname"
+                onChange={onInputChange}
               />
 
-              <label for="lastName" className="form-label">
+              <label for="phone" className="form-label">
                 Phone
               </label>
               <input
-                type="text"
+                type="phone"
                 className="form-control"
                 id="lastName"
                 placeholder=""
-                value=""
+                value={phone}
                 required=""
+                name="phone"
+                onChange={onInputChange}
               />
             </div>
           </div>
 
-          <button className="w-100 btn btn-primary btn-lg" type="submit">
+          <button className="w-100 btn btn-secondary btn-lg" type="submit">
             Register
           </button>
         </form>

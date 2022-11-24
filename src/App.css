@@ -281,7 +281,7 @@ height:100px; /*alto del div*/
   width: 100px;
 }
 .login-form-container{
-  max-width: 50%;
+  max-width: 400px;
   margin: 0 auto;
   height: 800px;
   padding-top: 100px;

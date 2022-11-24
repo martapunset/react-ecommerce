@@ -60,7 +60,7 @@ const Main =(props)=>{
         <div className="" key={product.id}>
          
             
-                  <div className="productcard " ><Link style={{textDecoration: 'none'}} to="">
+                  <div className="productcard " ><Link style={{textDecoration: 'none'}} to={`/${product.id}`}>
                             
                             <img className="product__img img-responsive" src={product.img} alt={product.title} />
                             

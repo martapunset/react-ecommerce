@@ -8,7 +8,8 @@ import { ProductPage } from '../Pages/ProductPage'
 import { RegisterPage } from '../Pages/RegisterPage'
 import { SignInPage } from '../Pages/SignInPage'
 
-
+import PrivateRoutes from './PrivateRoutes'
+import PublicRoutes from './PublicRoutes'
 
 
 export const Router = (props) => {
@@ -19,10 +20,10 @@ export const Router = (props) => {
      
            <Routes>
               <Route path='/' element={<HomePage />} />
-              <Route path='/checkout' element={<CheckoutPage />} />
+              <Route path='/checkout' element={<PrivateRoutes><CheckoutPage /></PrivateRoutes>} />
               <Route path='/login' element={<SignInPage />} />
           <Route path='/register' element={<RegisterPage />} />
-          <Route path='/product' element={<ProductPage />} />
+          <Route path='/:id' element={<ProductPage />} />
           
             </Routes>
       

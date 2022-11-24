@@ -1,57 +1,185 @@
-
 {
-    "products":
-  [{
-    "id": 101,
-    "title": "Board 1",
-    "price": 68,
-    "img":"../img/e1.jpg"
- 
-    
-  },
-  {
-    "id": 102,
-    "title": "Board 2",
-    "price": 78,
-    "img":"../img/e2.jpg"
-    
-    
-  },
-  {
-    "id": 103,
-    "title": "Board 3",
-    "price": 108,
-    "img":"../img/e3.jpg"
-
-  },
-  {
-    "id": 104,
-    "title": "Board 4",
-    "price": 98,
-    "img":"../img/e4.jpg"
-    
-  },
-  {
-    "id": 105,
-    "title": "Board 5",
-    "price": 96,
-    "img":"../img/e5.jpg"
-    
-  },
-  {
-    "id": 106,
-    "title": "Board 1",
-    "price": 88,
-    "img":"../img/e1.jpg"
-   
-    
-  }],
-  "users":
-  [
-    
-
-
-
+  "products": [
+    {
+      "id": 101,
+      "title": "Board 1",
+      "price": 68,
+      "img": "../img/e1.jpg"
+    },
+    {
+      "id": 102,
+      "title": "Board 2",
+      "price": 78,
+      "img": "../img/e2.jpg"
+    },
+    {
+      "id": 103,
+      "title": "Board 3",
+      "price": 108,
+      "img": "../img/e3.jpg"
+    },
+    {
+      "id": 104,
+      "title": "Board 4",
+      "price": 98,
+      "img": "../img/e4.jpg"
+    },
+    {
+      "id": 105,
+      "title": "Board 5",
+      "price": 96,
+      "img": "../img/e5.jpg"
+    },
+    {
+      "id": 106,
+      "title": "Board 1",
+      "price": 88,
+      "img": "../img/e1.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "martapunset10@gmail.com",
+      "password": "aaa",
+      "password2": "aaa",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 1
+    },
+    {
+      "email": "martapunset@gmail.com",
+      "password": "aaaeeee",
+      "password2": "aaaee",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 2
+    },
+    {
+      "email": "martapunt@gmail.com",
+      "password": "aaaeeee",
+      "password2": "aaaee",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 3
+    },
+    {
+      "email": "martapu@gmail.com",
+      "password": "eee",
+      "password2": "eee",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 4
+    },
+    {
+      "email": "mt10@gmail.com",
+      "password": "",
+      "password2": "",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 5
+    },
+    {
+      "email": "bernat@gmail.com",
+      "password": "dddd",
+      "password2": "dddd",
+      "firstname": "ma",
+      "lastname": "",
+      "phone": "",
+      "address": "",
+      "postalCode": "",
+      "id": 6
+    },
+    {
+      "email": "edser@gmail.com",
+      "password": "dd",
+      "password2": "ss",
+      "firstname": "ma",
+      "lastname": "",
+      "phone": "",
+      "address": "",
+      "postalCode": "",
+      "id": 7
+    },
+    {
+      "email": "edsdddder@gmail.com",
+      "password": "dd",
+      "password2": "ss",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 8
+    },
+    {
+      "email": "edsddiiidder@gmail.com",
+      "password": "dd",
+      "password2": "ss",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 9
+    },
+    {
+      "email": "muuuuuset10@gmail.com",
+      "password": "ddd",
+      "password2": "dddd",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 10
+    },
+    {
+      "email": "martapunset10@ail.co",
+      "password": "",
+      "password2": "",
+      "firstname": "Marta",
+      "lastname": "Casals",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 11
+    },
+    {
+      "email": "tytryrtyrd@gma",
+      "password": "ddd",
+      "password2": "ddd",
+      "firstname": "dd",
+      "lastname": "ddd",
+      "phone": "d",
+      "address": "",
+      "postalCode": "",
+      "id": 12
+    },
+    {
+      "email": "tytryrtyrd@gma5rrt",
+      "password": "ddd",
+      "password2": "ddd",
+      "firstname": "dd",
+      "lastname": "ddd",
+      "phone": "644346246",
+      "address": "",
+      "postalCode": "",
+      "id": 13
+    }
   ]
-
-  }
+}

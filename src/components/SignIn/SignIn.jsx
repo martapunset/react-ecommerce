@@ -5,7 +5,8 @@ import { CartContext } from "../../CartContext/CartProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
+
+import { AuthContext } from "../../auth/context";
 /*
 const useField = ({ type }) => {
     const [value, setValue] = useState('');
@@ -21,38 +22,62 @@ const useField = ({ type }) => {
 */
 
 export const SignIn = () => {
-  //   const username = useField({ type: 'email' })  //reuse it in the form
-  // const password = useField({type:'password'})
-  //   const { username } = useContext(CartContext);
-  //const { setUsername } = useContext(CartContext);
-  const [username, setUsername] = useState("undefined");
-  const [password, setPassword] = useState("");
+
+  const{login}=useContext(AuthContext)
+  //const authState=useContext(AuthContext)
+  //const { username, password, isLoading, error, isLoggedIn } = authState;
+  const [loginData, setloginData ] = useState({ 
+    email: "",
+    password:""
+  })
+
+  const { email, password } = loginData;
+
+
+
+ //const { setUsername } = useContext(CartContext);
+  const onInputChange = ({ target }) => {
+    const { name, value } = target;
+    
+    setloginData({
+      ...loginData,
+      [name]: value
+    })
+    
+    console.log(loginData)
+ }
+
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("this is submiiiiit");
+    login(loginData);
+    console.log(loginData, "loginData handle submit")
+
   };
- 
+  //const { id, user } = login;
 
   return (
     <>
-      {" "}
+   
       <h1>Login</h1>
-      <h5>{username}</h5>
-      <h5>{password}</h5>
+    
+     
       <form className="" onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <input
             className="form-control rounded-3"
             id="floatingInput"
             type="email"
-            value={username}
-            name="username"
-            placeholder="name@example.com"
-            onChange={(event) => setUsername(event.target.value)}
-          />
+            value={email}
+            name="email"
+            placeholder="name@example.com"  //TODO falta controlar el campo al evento
+            onChange={onInputChange}
+             //every time u type a letter it send the request
+          />  
 
-          <label for="floatingInput">Username</label>
+          <label for="floatingInput">Email</label>
         </div>
 
         <div className="form-floating mb-3">
@@ -63,7 +88,8 @@ export const SignIn = () => {
             value={password}
             name="password"
             placeholder="password"
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={onInputChange}
+            
           />
 
           <label for="floatingPassword">Password</label>
@@ -76,7 +102,7 @@ export const SignIn = () => {
         </button>
 
         <hr className="my-4" />
-
+        <div>Don't have an account?</div>
         <Link className="btn btn-secondary" to="/register">
           Register
         </Link>
