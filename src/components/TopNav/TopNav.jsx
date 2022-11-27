@@ -15,7 +15,7 @@ export const TopNav = () => {
 
   //const user = useContext(AuthContext)
 
-  console.log( "user intop nav")
+  console.log( "render Nav")
 
 
   

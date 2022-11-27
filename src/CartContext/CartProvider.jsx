@@ -11,6 +11,17 @@ export const CartProvider = (props) => {
 
 
   const [data, setdata] = useState([]);
+  useEffect(() => {
+    const prueba = async () => {
+      const datajson = await getData();
+      setdata(datajson);
+      console.log("data"+ data);
+    }
+    prueba();
+
+ }, [])
+
+
   const [cartItems, setCartItems] = useState(() => loadItems());
 
   const addToCart = (product) => {

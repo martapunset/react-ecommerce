@@ -5,56 +5,56 @@ import { CartContext } from '../../CartContext/CartProvider';
 import { CartProvider } from '../../CartContext/CartProvider';
 import { getData } from '../../api/api';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useSearchParams} from 'react-router-dom';
 import AlertSuccess from '../Alerts/Alert';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const Main =(props)=>{
-
+ 
 //const { products, cartItems, setCartitems} = props;
-  const { addToCart } = useContext(CartContext);
 
-  //const { cartItems } = useContext(CartContext);
+  const { addToCart, data } = useContext(CartContext);
+  const [searchParams, setSearchParams]=useSearchParams();
+  const query = searchParams.get("query") ?? "";
   //const { setCartItems } = useContext(CartContext);
-  const [data, setdata] = useState([]);
+  //.const [data, setdata] = useState([]);
 
-  
   //const url = "http://localhost:3001/products";
 
-  useEffect(() => {
-    const prueba = async () => {
-      const datajson = await getData();
-      setdata(datajson);
-      console.log("data"+ data);
-    }
-    prueba();
-
- }, [])
-
-
-
+  const handleInputFilter = ({ target }) => {
+    const { value } = target;
+    setSearchParams({query:value})
+  }
+ console.log(query)
+ //todo search BAR
+//todo filter products
   return (
     <> 
       <div className='main-wrapper'>
         
         <div className="search-form">
-                            <Form>
-                              <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                              />
-                              <Button variant="outline-success">Search</Button>
-                            </Form>
+                            <input  type="text"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              value={query} onChange={handleInputFilter}>
+                            </input>
                   </div>
                   </div>
     
       <main className="wrapper text-center">
         
       
-      {data.map((product) => (
+        {data
+          .filter((products) => {
+            if (!query) return true;
+            else {
+              const productName = products.title.toLowerCase()
+              return productName.includes(query.toLowerCase())
+            }
+           })
+          .map((product) => (
         
         
         <div className="" key={product.id}>
