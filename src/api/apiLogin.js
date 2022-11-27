@@ -13,7 +13,8 @@ export const getUser =async (email) => {
 
     
   } catch (error) {
-      <h1>Api response error</h1>
+    <h1>Api response error</h1>
+    console.log("api error")
     }  
    
 }

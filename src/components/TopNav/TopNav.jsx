@@ -8,27 +8,26 @@ import Form from "react-bootstrap/Form";
 import Login from "../SignIn/Login";
 import { useContext } from "react";
 import { AuthContext } from "../../auth/context";
-
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 export const TopNav = () => {
+  const { user, logout,authState} = useContext(AuthContext);
 
-  const { user, logout } = useContext(AuthContext)
+console.log(authState)
+  console.log(user);
+  //TODO nav bar no se renderiza despues del logout
 
-  //const user = useContext(AuthContext)
+  let buttonlog = "";
+ 
+  if (user!=null) {
+    buttonlog = <LogoutButton />
+      
+    console.log("logout")
+  } else {
+    console.log("login")
+     buttonlog= <Link to="/login">Login</Link>
 
-  console.log( "render Nav")
-
-
-  
-  
-  const navigate = useNavigate();
-  const onLogout = () => {
-
-    logout();
-     navigate("/login", {
-     replace:true,
-   })
- }
-
+  }
 
   return (
     <>
@@ -42,38 +41,29 @@ export const TopNav = () => {
                 <img src={logo} />
               </li>
               <li>
-                {" "}
+            
                 <Link className="btn" to="/">
                   Shop
                 </Link>
               </li>
 
+             
               <li className="">
-                <a href="shop.html">Company</a>
+                <a href="">Contact</a>
               </li>
-              <li className="">
-                <a href="contact.html">Contact</a>
-              </li>
-              
-              <li>
-                <Link className="btn" to="/login">
-                  Login
-                </Link>
-              </li>
+                
+              <li> { buttonlog}</li>
 
               <div className="clear"></div>
             </ul>
           </div>
         </div>
-    
+
         <div className="dropdown-button">
-        <li>
-                <button className="" onClick={onLogout}>  //TODO change button toggle login/logout
-                  LogOut
-                </button>
-              </li>
-          <span className="username-span">Logged as: {user?.email} </span>
-        
+          
+
+          <span className="username-span">{user&&"Logged as:"} {user?.email} </span>
+
           <Dropdownlist>
             <Basket />
           </Dropdownlist>

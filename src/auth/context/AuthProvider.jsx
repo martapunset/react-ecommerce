@@ -4,8 +4,8 @@ import { AuthReducer } from "./AuthReducer";
 import { types } from "../types/types";
 //import { Navigate } from "react-router-dom";
 import { getUser, postUser } from "../../api/apiLogin";
+import { Navigate , useNavigate} from "react-router-dom";
 
-//const navigate = Navigate();
 export const AuthProvider = ({ children }) => {
   const initArgs = {
     isLogged: false,
@@ -30,6 +30,7 @@ export const AuthProvider = ({ children }) => {
     //navigate("/login", {   //todo navigate to index when logged out
     //  replace:true,
     //  })
+   
   };
 
   //no se pasa el dispatch por provider value
@@ -46,6 +47,7 @@ export const AuthProvider = ({ children }) => {
           type: types.login,
           payload: user,
         });
+       
       } else {
         console.log("user or pasword incorrect");
       }

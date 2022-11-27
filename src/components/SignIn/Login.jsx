@@ -6,7 +6,8 @@ import { SignIn } from './SignIn';
 
 
 
- function Login(){
+function Login() {
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

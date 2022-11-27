@@ -3,25 +3,15 @@ import React from "react";
 import { useState } from "react";
 import { CartContext } from "../../CartContext/CartProvider";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link ,Navigate} from "react-router-dom";
+
 
 
 import { AuthContext } from "../../auth/context";
-/*
-const useField = ({ type }) => {
-    const [value, setValue] = useState('');
-    const onChange = event => {
-        setValue(event.target.value)
-    }
-    return {
-        type,
-        value,
-        onChange
-    }
-}
-*/
+
 
 export const SignIn = () => {
+
 
   const{login}=useContext(AuthContext)
   //const authState=useContext(AuthContext)

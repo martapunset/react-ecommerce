@@ -3,57 +3,44 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../auth/context";
 
-
-
-
-
-
 export const RegisterForm = () => {
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  const { login } = useContext(AuthContext)
-  const {register}=useContext(AuthContext)
+  const { login } = useContext(AuthContext);
+  const { register } = useContext(AuthContext);
   //const authState=useContext(AuthContext)
   //const { username, password, isLoading, error, isLoggedIn } = authState;
-  const [registerData, setregisterData ] = useState({ 
+  const [registerData, setregisterData] = useState({
     email: "",
     password: "",
-    password2:"",
+    password2: "",
     firstname: "",
     lastname: "",
     phone: "",
     address: "",
-    postalCode: ""
-  })
+    postalCode: "",
+  });
 
-  const { email, password, password2, firstname, lastname, phone, } = registerData;
+  const { email, password, password2, firstname, lastname, phone } =
+    registerData;
 
-
-
- //const { setUsername } = useContext(CartContext);
+  //const { setUsername } = useContext(CartContext);
   const onInputChange = ({ target }) => {
     const { name, value } = target;
-    
+
     setregisterData({
       ...registerData,
-      [name]: value
-    })
-    console.log(value)
-  
- }
-
-  
+      [name]: value,
+    });
+    console.log(value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("this is submiiiiit");
-   register(registerData);   //function to receive and validate the resgister data
-    console.log(registerData, "loginData handle submit")
-
+    register(registerData); //function to receive and validate the resgister data
+    console.log(registerData, "loginData handle submit");
   };
-  //const { id, user } = login;
 
 
   return (
