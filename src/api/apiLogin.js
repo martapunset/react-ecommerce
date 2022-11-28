@@ -1,6 +1,6 @@
     
 
-export const getUser =async (email) => {
+export const getUser =async (email="") => {
     const url = "http://localhost:3001/users";
   try {
     const response = await fetch(url);

@@ -23,8 +23,7 @@ export const RegisterForm = () => {
 
   const { email, password, password2, firstname, lastname, phone } =
     registerData;
-
-  //const { setUsername } = useContext(CartContext);
+  
   const onInputChange = ({ target }) => {
     const { name, value } = target;
 

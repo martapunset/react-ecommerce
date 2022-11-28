@@ -61,15 +61,15 @@ const Main = (props) => {
                   />
 
                   <div className="shop_desc">
-                    <a href="single.html"></a>
+                   
                     <h3>
                       <a href="single.html"></a>
                       <a href="#">{product.title}</a>
                     </h3>
-                    <h5>REF: {product.id}</h5>
+                    <p>REF: {product.id}</p>
                     <p>Lorem ipsum consectetuer adipiscing </p>
-                    <span className="reducedfrom">{product.price}</span>
-                    <span className="actual">{product.price} Euros</span>
+                
+                    <span className="actual">    Price: {product.price} Euros</span>
                     <br />
                   </div>
                 </Link>

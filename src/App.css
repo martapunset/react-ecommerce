@@ -53,6 +53,9 @@ body {
   background-color: rgb(234, 234, 234);
   
 }
+.nav img{
+  padding: 10px 50px ;
+}
 
 .dropdown-button{
   width: 68%;
@@ -61,7 +64,7 @@ body {
   align-items: center;
   }
   .dropdown-menu{
-    width: 400px;
+    width: 450px;
     height: 700px;
   }
 .productcard {
@@ -132,6 +135,7 @@ body {
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   */
+
 max-width: 80%;
   flex-wrap: wrap;
  margin: 0 auto;
@@ -213,11 +217,6 @@ ul.footer_box li a:hover{
 .container-basket{
   max-width: 400px;
 }
-.carousel-container{
-  width: 800px;
-  height: 800px;
-
-}
 
 a{
   text-decoration: none;
@@ -225,7 +224,7 @@ a{
 
 .search-form>*{
   display: flex;
-  max-width: 300px;
+  max-width: 400px; 
   
 
 }
@@ -235,12 +234,15 @@ a{
 }
 .main-wrapper{
 
-  height: 100px;
+  height: 200px;
   display: flex;
   align-items: center;
+  max-width: 1500px;
+  padding: 100px;
+  margin: 0 auto;
  
-
 }
+
 .search-form{
   
   margin: 0 auto;
@@ -263,7 +265,7 @@ a{
 }
 
 .wrapper-product{
-  height: 800px;
+
   width: 90%;
 
  padding: 100px;;
@@ -286,9 +288,21 @@ height:100px; /*alto del div*/
   height: 800px;
   padding-top: 100px;
 }
-header >*{
-  color: white;
+.nav {
+  background-color:#282c34;
+  color:white;
+  
+}
+.nav{
+  width:100%;
+  display:flex;
+  align-items: center;
+
+  
 }
 .username-span{
   padding: 20px 20px;
+}
+.App{
+  height: 2000px;
 }

@@ -31,9 +31,9 @@ console.log(authState)
 
   return (
     <>
-      <header className="container-fluid d-flex">
-        <div className="row">
-          <div className="header">
+      
+        <div className=" nav row">
+    
             <div className="logo"></div>
 
             <ul className="nav menu" id="nav">
@@ -48,18 +48,17 @@ console.log(authState)
               </li>
 
              
-              <li className="">
-                <a href="">Contact</a>
+              <li >
+              
+              <Link className="btn" to="/">
+                  Contact
+                </Link>
               </li>
                 
               <li> { buttonlog}</li>
 
-              <div className="clear"></div>
-            </ul>
-          </div>
-        </div>
-
-        <div className="dropdown-button">
+          <div className="clear"></div>
+          <div className="dropdown-button">
           
 
           <span className="username-span">{user&&"Logged as:"} {user?.email} </span>
@@ -68,7 +67,13 @@ console.log(authState)
             <Basket />
           </Dropdownlist>
         </div>
-      </header>
+        </ul>
+        
+          </div>
+      
+
+        
+    
     </>
   );
 };

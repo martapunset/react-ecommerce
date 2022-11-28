@@ -7,20 +7,15 @@ import Swal from "sweetalert2";
 export const CartContext = createContext();
 
 export const CartProvider = (props) => {
-
-
-
   const [data, setdata] = useState([]);
   useEffect(() => {
     const prueba = async () => {
       const datajson = await getData();
       setdata(datajson);
-      console.log("data"+ data);
-    }
+      console.log("data" + data);
+    };
     prueba();
-
- }, [])
-
+  }, []);
 
   const [cartItems, setCartItems] = useState(() => loadItems());
 
@@ -32,7 +27,7 @@ export const CartProvider = (props) => {
           x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
         )
       );
-      // alert("Added to cart succesfully");
+
       Swal.fire({
         position: "top",
         icon: "success",
@@ -47,8 +42,7 @@ export const CartProvider = (props) => {
   };
 
   const substract = (product) => {
-    //TODO limit negative quantity below 0
-    const exist = cartItems.find((x) => x.id === product.id); //looking for rpoduct in array cartItems []
+    const exist = cartItems.find((x) => x.id === product.id);
     if (exist && exist.qty > 1) {
       setCartItems(
         cartItems.map((x) =>
@@ -95,8 +89,6 @@ export const CartProvider = (props) => {
       >
         {props.children}
       </CartContext.Provider>
-
-    
     </>
   );
 };

@@ -15,13 +15,13 @@ export const AuthProvider = ({ children }) => {
     const user = JSON.parse(localStorage.getItem("user"));
     //1.56 minutes video jose
     return {
-      // console.log(user);
+      
       isLogged: !!user,
       user,
     };
   };
 
-  // const navigate = useNavigate();
+
   const logout = () => {
     localStorage.removeItem("user");
     dispatch({
@@ -40,16 +40,19 @@ export const AuthProvider = ({ children }) => {
     const validateUser = async () => {
       const datajson = await getUser(user.email);
 
-      console.log(user.email, datajson.email);
-      if (user.email == datajson.email && user.password == datajson.password) {
-        localStorage.setItem("user", JSON.stringify(user));
-        dispatch({
-          type: types.login,
-          payload: user,
-        });
+      
+      if (datajson) {
+        if (user.email == datajson.email && user.password == datajson.password) {
+          localStorage.setItem("user", JSON.stringify(user));
+          dispatch({
+            type: types.login,
+            payload: user,
+          });
        
-      } else {
-        console.log("user or pasword incorrect");
+        } else {
+          
+          console.log("user or pasword incorrect");
+        }
       }
     };
     validateUser();
